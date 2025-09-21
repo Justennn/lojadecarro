@@ -1,0 +1,32 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+nav {
+  text-align: center;
+  background-color: dark;
+}
+
+footer {
+  border: solid;
+  text-align: center;
+  background-color: black;
+  color: white;
+  height: 100px;
+
+}
+
+img {
+  width: 415px;
+ 
+}
+
+nav {
+  height: 90px;
+  background-color: black;
+
+}
+.logo{
+  width: 105px;
+}

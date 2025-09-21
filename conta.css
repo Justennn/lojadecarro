@@ -1,0 +1,42 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+nav {
+  text-align: center;
+  background-color: dark;
+}
+
+footer {
+  border: solid;
+  text-align: center;
+  background-color: black;
+  color: white;
+  height: 100px;
+
+}
+
+img {
+  width: 410px;
+  height: 351px;
+ 
+}
+
+nav {
+  height: 90px;
+  background-color: black;
+}
+
+
+.conta{
+  height: 735px;
+}
+.form-group{
+  height: 260px;
+  text-align: center;
+}
+.logo{
+  width: 105px;
+  height: 105px;
+}

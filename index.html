@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carros</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script defer src="java.js"></script>
+  <link href="inicio.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+   <div class="container-fluid cor-principal">
+  <nav class="navbar navbar-expand-lg position-relative">
+    <div class="container-fluid">
+      <!-- Esquerda: Menu -->
+      <div class="navbar-left d-flex align-items-center">
+        <a class="navbar-brand text-white me-3" href="#">CAR Justen</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- Centro: Logo -->
+      <div class="navbar-center position-absolute top-50 start-50 translate-middle">
+        <img src="https://cdn.glitch.global/0c82f4dd-7ba3-4c1b-ace5-ec88d7ac4778/ChatGPT_Image_12_de_mai._de_2025__13_38_23-removebg-preview.png?v=1747263860344" alt="" class="logo">
+      </div>
+
+      <!-- Direita: Menu e Busca -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="index.html">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="conta.html">Conta</a>
+           <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="turbo.html">turbo</a></li>
+              <li><a class="dropdown-item" href="tracao.html">ADW e RWD</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Sequencial</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+
+        <form class="d-flex" role="search">
+           <a href="postarcarro.html" class="btn btn-outline-primary " role="button">Publicar um carro</a>
+        </form>
+      </div>
+    </div>
+  </nav>
+</div>
+
+  <div class="container-fluid">
+    <div class="row">
+      
+      <!-- Sidebar de filtros -->
+      <aside class="col-md-3 bg-light p-3 border-end" style="min-height: 100vh;">
+        <h4 class="mb-3">Filtros</h4>
+
+        <!-- Filtro por nome -->
+        <div class="mb-3">
+          <label class="form-label">Pesquisar por nome</label>
+          <input type="text" id="searchInput" class="form-control" placeholder="Ex: Ferrari">
+        </div>
+
+        <!-- Filtro por combustível -->
+        <div class="mb-3">
+          <label class="form-label">Combustível</label>
+          <select id="fuelFilter" class="form-select">
+            <option value="">Todos</option>
+            <option value="Gasolina">Gasolina</option>
+            <option value="Flex">Flex</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Elétrico">Elétrico</option>
+          </select>
+        </div>
+
+        <!-- Filtro turbo -->
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" id="turboFilter">
+          <label class="form-check-label" for="turboFilter">Apenas Turbo</label>
+        </div>
+
+        <button id="clearFilters" class="btn btn-secondary w-100">Limpar filtros</button>
+      </aside>
+
+      <!-- Lista de carros -->
+      <main class="col-md-9">
+        <div class="row" id="carList">
+
+          <!-- 1 -->
+          <div class="card col-12 col-md-6 col-lg-4 mt-4" data-fuel="Gasolina" data-turbo="true">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202505/20250505/mclaren-720s-4.0-v8-turbo-gasolina-ssg-wmimagem16525133878.jpg?s=fill&w=552&h=414&q=60" class="card-img-top" alt="MCLAREN 720S">
+            <div class="card-body">
+              <h5 class="card-title">MCLAREN 720S</h5>
+              <p class="card-text">4.0 V8 Turbo Gasolina Ssg<br/>2018/2018 – 9.700 Km<br/>Brusque (SC)</p>
+              <h1>R$ 2.499.990</h1>
+              <a href="#" class="btn btn-dark w-100">Ver parcelas</a>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="card col-12 col-md-6 col-lg-4 mt-4" data-fuel="Gasolina" data-turbo="true">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202504/20250403/porsche-911-4-0-24v-h6-gasolina-gt3-rs-pdk-wmimagem19085112640.webp?s=fill&w=552&h=414&q=60" class="card-img-top" alt="Porsche 911 GT3 RS">
+            <div class="card-body">
+              <h5 class="card-title">Porsche 911 GT3 RS</h5>
+              <p class="card-text">4.0 H6 Gasolina GT3 RS<br/>2024/2024 – 0 Km<br/>Passo Fundo (RS)</p>
+              <h1>R$ 3.850.900</h1>
+              <a href="#" class="btn btn-dark w-100">Ver parcelas</a>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="card col-12 col-md-6 col-lg-4 mt-4" data-fuel="Gasolina" data-turbo="true">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202504/20250411/mercedesbenz-a-45-amg-2.0-cgi-gasolina-s-4matic-speedshift-wmimagem16414965393.jpg?s=fill&w=552&h=414&q=60" class="card-img-top" alt="Onix 1.0">
+            <div class="card-body">
+              <h5 class="card-title">Mercedes-Benz A 45 AMG</h5>
+              <p class="card-text">2.0 Cgi Gasolina S 4matic Speedshift<br/>2020/2020 - 18.000 Km<br/>Bragança Paulista (SP)</p>
+              <h1>R$ 420.000</h1>
+              <a href="#" class="btn btn-dark w-100">Ver parcelas</a>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="card col-12 col-md-6 col-lg-4 mt-4" data-fuel="Gasolina" data-turbo="true">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202508/20250826/volkswagen-golf-2-0-tsi-gti-16v-turbo-gasolina-4p-automatico-wmimagem20434628162.webp" class="card-img-top" alt="VW Golf GTI">
+            <div class="card-body">
+              <h5 class="card-title">Volkswagen Golf GTI</h5>
+              <p class="card-text">2.0 TSI DSG<br/>2020/2021 – 35.000 Km<br/>Curitiba (PR)</p>
+              <h1>R$ 169.990</h1>
+              <a href="#" class="btn btn-dark w-100">Ver parcelas</a>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="card col-12 col-md-6 col-lg-4 mt-4" data-fuel="Gasolina" data-turbo="true">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202505/20250505/audi-tt-rs-2-5-tfsi-quattro-coupe-gasolina-2p-stronic-wmimagem20351177739.webp?s=fill&w=552&h=414&q=60" class="card-img-top" alt="Hilux SRX">
+            <div class="card-body">
+              <h5 class="card-title">Audi TT RS</h5>
+              <p class="card-text">2.5 Tfsi Quattro S-Tronic<br/>2021/2021 - 14.524 Km<br/>Vinhedo (SP)</p>
+              <h1>R$ 669.990</h1>
+              <a href="#" class="btn btn-dark w-100">Ver parcelas</a>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="card col-12 col-md-6 col-lg-4 mt-4" data-fuel="Gasolina" data-turbo="true">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202504/20250414/mercedesbenz-amg-gt-4-0-v8-turbo-gasolina-black-series-7gdct-wmimagem14151662523.webp?s=fill&w=552&h=414&q=60" class="card-img-top" >
+            <div class="card-body">
+              <h5 class="card-title">Mercedes-Benz AMG GT</h5>
+              <p class="card-text">Gasolina<br/>2021/2021 – 100 Km<br/>São Paulo (SP)</p>
+              <h1>R$ 4.800.000</h1>
+              <a href="#" class="btn btn-dark w-100">Ver parcelas</a>
+            </div>
+          </div>
+        
+          <div class="card col-12 col-md-6 col-lg-4 mt-4" data-fuel="Gasolina" data-turbo="true">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202507/20250724/volkswagen-jetta-1.4-16v-tsi-comfortline-gasolina-4p-tiptronic-wmimagem14200722132.jpg?s=fill&w=1920&h=1440&q=75" class="card-img-top" >
+            <div class="card-body">
+              <h5 class="card-title">Volkswagen Jetta TSI</h5>
+              <p class="card-text">Gasolina<br/>2017/2017 – 90000 Km<br/>Bom Jesus do Sul (PR)</p>
+              <h1>R$ 92.000</h1>
+              <a href="#" class="btn btn-dark w-100">Ver parcelas</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-6 col-lg-4 mt-4" data-fuel="Gasolina" data-turbo="true">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202505/20250526/honda-civic-2.0-16v-flexone-ex-4p-cvt-wmimagem10395140065.jpg?s=fill&w=1920&h=1440&q=75" class="card-img-top" >
+            <div class="card-body">
+              <h5 class="card-title">Honda Civic EX</h5>
+              <p class="card-text">Gasolina<br/>2020/2021 – 62000 Km<br/>Paranaguá (PR)</p>
+              <h1>R$ 92.000</h1>
+              <a href="#" class="btn btn-dark w-100">Ver parcelas</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-6 col-lg-4 mt-4" data-fuel="Gasolina" data-turbo="true">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202508/20250829/volkswagen-tiguan-2-0-350-tsi-gasolina-allspace-rline-4motion-dsg-wmimagem12240267826.webp?s=fill&w=1920&h=1440&q=75" class="card-img-top" >
+            <div class="card-body">
+              <h5 class="card-title">Volkswagen Tiguan 350TSI</h5>
+              <p class="card-text">Gasolina<br/>2018/2019 – 12300 Km<br/>Chapecó (SC)</p>
+              <h1>R$ 167.000</h1>
+              <a href="#" class="btn btn-dark w-100">Ver parcelas</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-6 col-lg-4 mt-4" data-fuel="Gasolina" data-turbo="true">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202507/20250702/hyundai-creta-1.6-tgdi-gasolina-ultimate-dct-wmimagem15475274941.jpg?s=fill&w=1920&h=1440&q=75" class="card-img-top" >
+            <div class="card-body">
+              <h5 class="card-title">Hiunday Creta ULTIMATE</h5>
+              <p class="card-text">Gasolina<br/>2025/2025 – 300 Km<br/>Barracão (PR)</p>
+              <h1>R$ 189.000</h1>
+              <a href="#" class="btn btn-dark w-100">Ver parcelas</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-6 col-lg-4 mt-4" data-fuel="Gasolina" data-turbo="true">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202504/20250412/bmw-x4-3-0-twinpower-gasolina-m40i-steptronic-wmimagem13115300428.webp?s=fill&w=1920&h=1440&q=75" class="card-img-top" >
+            <div class="card-body">
+              <h5 class="card-title">BMW X4</h5>
+              <p class="card-text">Gasolina<br/>2024/2025 – 10.220 Km<br/>Foz do Iguaçu (PR)</p>
+              <h1>R$ 539.000</h1>
+              <a href="#" class="btn btn-dark w-100">Ver parcelas</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-6 col-lg-4 mt-4" data-fuel="Gasolina" data-turbo="true">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250902/bmw-m3-3.0-i6-twinturbo-gasolina-competition-m-steptronic-wmimagem1241198933.jpg?s=fill&w=1920&h=1440&q=75" class="card-img-top" >
+            <div class="card-body">
+              <h5 class="card-title">BMW M3</h5>
+              <p class="card-text">Gasolina<br/>2022/2022 – 14.740 Km<br/>Londrina (PR)</p>
+              <h1>R$ 578.000</h1>
+              <a href="#" class="btn btn-dark w-100">Ver parcelas</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-6 col-lg-4 mt-4" data-fuel="Gasolina" data-turbo="true">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202503/20250331/land-rover-range-rover-velar-2.0-p300-gasolina-rdynamic-s-automatico-wmimagem22185609662.jpg?s=fill&w=1920&h=1440&q=75" class="card-img-top" >
+            <div class="card-body">
+              <h5 class="card-title">Range Rover Velar</h5>
+              <p class="card-text">Gasolina<br/>2022/2022 – 61.740 Km<br/>Curitiba (PR)</p>
+              <h1>R$ 398.000</h1>
+              <a href="#" class="btn btn-dark w-100">Ver parcelas</a>
+            </div>
+          </div>
+
+          <div class="card col-12 col-md-6 col-lg-4 mt-4" data-fuel="Gasolina" data-turbo="true">
+            <img src="moto.jpg" class="card-img-top" >
+            <div class="card-body">
+              <h5 class="card-title">Honda CRF-230 KIT 270 </h5>
+              <p class="card-text">Gasolina<br/>2007/2008 –---- Km<br/>Barracão (PR)</p>
+              <h1>R$ 10.500</h1>
+              <a href="#" class="btn btn-dark w-100">Ver parcelas</a>
+            </div>
+          </div>
+
+          <footer class="footer mt-5"><br>Desenvolvido por Rafael e Gabriel| IFPR Barracão<br>
+
+Loja de Carros – Conectando você aos melhores veículos do mercado.<br></footer>
+
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
